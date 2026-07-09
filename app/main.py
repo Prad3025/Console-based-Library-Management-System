@@ -1,26 +1,48 @@
-#Day 1[Creating Book Attribute]
+book_ids=[]
+book_titles=[]
+book_authors=[]
 
-import book
-import members
-import library
+while True:
+    print('\n======== Library Management System ====')
+    print("1.View Books")
+    print("2.Add Book")
+    print("3.Search Book")
+    print("4.Exit")
 
-print("\n===== Library Details =====")
-print("Library Name:", library.library_name)
-print("Total Books:", library.total_books)
-print("Available Books:", library.total_books - book.available_copies)
+    choice=int(input("Enter your choice (1-4): "))
 
-print("\n===== Book Details =====")
-print("Book ID:", book.book_id)
-print("Title:", book.book_title)
-print("Author:", book.book_author)
-print("Available Books:", book.total_copies - book.available_copies)
-if book.available_copies > 0:
-    print("Status: Available")
-else:
-    print("Status: Not Available")
+    if choice==1:
+        if len(book_ids)==0:
+            print("No Books Available")
+        else:
+            print("\n Linst of Books")
+            for i in range(len(book_ids)):
+                print(f"Book ID:{book_ids[i]}")
+                print(f"Book Title:{book_titles[i]}")
+                print(f"Book Authors:{book_authors[i]}")
 
-print("\n===== Member Details =====")
-print("Member ID:", members.member_id)
-print("Member Name:", members.member_name)
+    elif choice==2:
+        print("\n Add Book")
+        book_id=int(input("Enter book Id:"))
+        book_title=input("Enter Book Title:")
+        book_author=input("Enter Book Author:")
+        book_ids.append(book_id)
+        book_titles.append(book_title)
+        book_authors.append(book_author)
 
-# Run using the command: [ python main.py ] in termina
+        print("Book Added Successfully")
+
+    elif choice==3:
+        search_id=int(input("Enter Book ID to Search:"))
+        if search_id in book_ids:
+            index=book_ids.index(search_id)
+            print(f"Book Title: {book_titles[index]}")
+            print(f"Book Author: {book_authors[index]}")
+        else:
+            print("Book not found.")
+
+    elif choice==4:
+        print("Exiting the program.")
+        break
+    else:
+        print("Invalid choice. Please try again.")
