@@ -1,29 +1,25 @@
-# Console-based-Library-Management-System
 # 📚 Console-Based Library Management System
 
-A simple **Console-Based Library Management System** developed in Python as part of the Hexaware training program. This project demonstrates Python fundamentals, including variables, data types, operators, user input/output, and basic management of library, book, and member information.
-
----
+A simple **Console-Based Library Management System** developed in Python as part of my learning journey. This project demonstrates the fundamentals of Python programming, including conditions, loops, lists, and menu-driven applications.
 
 ## 🚀 Features
 
-- Add Library details
-- Add Book details
-- Add Member details
-- Capture user input through the console
-- Display entered information
-- Demonstrates Python fundamentals:
-  - Variables
-  - Data Types
-  - Operators
-  - Input/Output
+- 📖 View Books
+- ➕ Add New Book
+- 🔍 Search Book by Title
+- 🚪 Exit Application
+- 📋 Menu-driven console interface
 
----
+## 🛠️ Technologies Used
 
-## 📁 Project Structure
+- Python 3.x
+- Visual Studio Code
+- Git & GitHub
+
+## 📂 Project Structure
 
 ```
-Console-based-Library-Management-System/
+LibraryManagementSystem/
 │
 ├── app/
 │   ├── main.py
@@ -32,72 +28,82 @@ Console-based-Library-Management-System/
 │   └── members.py
 │
 ├── README.md
-├── .gitignore
-└── requirements.txt
+└── .gitignore
 ```
-
----
-
-## 🛠️ Technologies Used
-
-- Python 3.x
-- Visual Studio Code
-- Git
-- GitHub
-
----
 
 ## ▶️ How to Run
 
-1. Clone the repository:
+1. Clone the repository
 
 ```bash
 git clone https://github.com/Prad3025/Console-based-Library-Management-System.git
 ```
 
-2. Navigate to the project folder:
+2. Navigate to the project folder
 
 ```bash
-cd Console-based-Library-Management-System
+cd Console-based-Library-Management-System/app
 ```
 
-3. Run the application:
+3. Run the application
 
 ```bash
-python app/main.py
+python main.py
 ```
 
----
+## 📌 Sample Menu
 
-## 📅 Training Progress
+```
+========== Library Management System ==========
+1. View Books
+2. Add Book
+3. Search Book
+4. Exit
+```
 
-### ✅ Week 1 - Python Fundamentals
+## 📖 Concepts Covered
 
-- [x] Day 1 - Variables, Data Types, Operators, Input/Output
-- [ ] Day 2 - Conditions & Loops
-- [ ] Day 3 - Functions
-- [ ] Day 4 - Collections
-- [ ] Day 5 - File Handling & Exceptions
-- [ ] Day 6 - Git & GitHub
-- [ ] Day 7 - Assessment
+### Day 1
+- Variables
+- User Input
+- Data Types
+- Basic Console Output
 
----
+### Day 2
+- Conditions (`if`, `elif`, `else`)
+- Loops (`while`, `for`)
+- Lists
+- Menu-Driven Programming
+- Searching Data
+- Basic CRUD (Create, Read, Search)
 
-## 📌 Future Enhancements
+## 🎯 Learning Objectives
 
-- Menu-driven application
-- CRUD operations
-- File handling using JSON
-- Object-Oriented Programming
-- SQL Database Integration
-- FastAPI REST APIs
-- Authentication & Authorization
-- Unit Testing
+This project was built to strengthen my understanding of:
 
----
+- Python Fundamentals
+- Control Flow
+- Lists and Data Storage
+- Console-Based Application Development
+- Git and GitHub Version Control
+
+## 🔮 Future Enhancements
+
+- Object-Oriented Programming (OOP)
+- Member Management
+- Book Issue & Return
+- File Handling for Data Persistence
+- Exception Handling
+- Database Integration (SQLite/MySQL)
 
 ## 👨‍💻 Author
 
 **Pradeep Kumar**
 
-GitHub: https://github.com/Prad3025
+B.Tech Computer Science Engineering (AI & ML)
+
+Passionate about Python, Artificial Intelligence, Machine Learning, and Software Development.
+
+## ⭐ Repository
+
+If you found this project helpful, feel free to ⭐ star the repository.
