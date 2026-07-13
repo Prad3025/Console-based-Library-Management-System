@@ -1,115 +1,168 @@
-book_ids=[]
-book_titles=[]
-book_authors=[]
-book_status=[]
+books = []
 
-def addbook():
-    print("\n Add Book Details")
 
-    book_id=int(input("enter book Id:"))
-    titles=input("enter book title:")
-    authors=input("enter book author:")
+# Add Book
+def add_book():
+    print("\n----- Add Book -----")
 
-    book_ids.append(book_id)
-    book_titles.append(titles)
-    book_authors.append(authors)
-    book_status.append("Available")
+    book = {
+        "book_id": int(input("Enter Book ID: ")),
+        "title": input("Enter Book Title: "),
+        "author": input("Enter Author Name: "),
+        "status": "Available"
+    }
 
-    print("\n Book Added Successfully")
+    books.append(book)
 
+    print("\nBook added successfully!")
+
+
+# View Books
 def view_books():
-    if len(book_ids)==0:
-        print("\n no books available in the library")
-        return
-    
-    print("\n Book Details")
 
-    for i in range(len(book_ids)):
-        print(f"Book ID: {book_ids[i+1]}, Title: {book_titles[i]}, Author: {book_authors[i]}, Status: {book_status[i]}")
-
-def search_books():
-    if len(book_ids)==0:
-        print("\n no books available in the library")
+    if len(books) == 0:
+        print("\nNo books available in the library.")
         return
 
-    search_title=input("Enter book title to search: ")
-    found=False
+    print("\n========== Book Details ==========")
 
-    for i in range(len(book_titles)):
-        if book_titles[i].lower()==search_title.lower():
-            print(f"\n Book Found: ID: {book_ids[i]}, Title: {book_titles[i]}, Author: {book_authors[i]}, Status: {book_status[i]}")
-            found=True
+    for book in books:
+
+        print(f"""
+Book ID : {book["book_id"]}
+Title   : {book["title"]}
+Author  : {book["author"]}
+Status  : {book["status"]}
+""")
+
+
+# Search Book
+def search_book():
+
+    if len(books) == 0:
+        print("\nNo books available in the library.")
+        return
+
+    search_title = input("Enter Book Title to Search: ")
+
+    found = False
+
+    for book in books:
+
+        if book["title"].lower() == search_title.lower():
+
+            print("\nBook Found")
+
+            print(f"""
+Book ID : {book["book_id"]}
+Title   : {book["title"]}
+Author  : {book["author"]}
+Status  : {book["status"]}
+""")
+
+            found = True
             break
 
     if not found:
-        print(f"\n Book with title '{search_title}' not found.")
+        print("\nBook not found.")
 
-def delete_books():
-    if len(book_ids)==0:
-        print("\n no books available in the Library")
+
+# Delete Book
+def delete_book():
+
+    if len(books) == 0:
+        print("\nNo books available in the library.")
         return
-    
-    delete_id=int(input("Enter book ID to delete: "))
 
-    found=False
+    delete_id = int(input("Enter Book ID to Delete: "))
 
-    for i in range(len(book_ids)):
-        if book_ids[i]==delete_id:
-            book_ids.pop(i)
-            book_titles.pop(i)
-            book_authors.pop(i)
-            book_status.pop(i)
+    found = False
 
-            print(f"\n Book with ID {delete_id} deleted successfully.")
-            found=True
+    for book in books:
+
+        if book["book_id"] == delete_id:
+
+            books.remove(book)
+
+            print("\nBook deleted successfully!")
+
+            found = True
             break
 
+    if not found:
+        print("\nBook ID not found.")
+
+
+# Issue Book
 def issue_book():
-    if len(book_ids)==0:
-        print("\n no books available in library")
+
+    if len(books) == 0:
+        print("\nNo books available in the library.")
         return
-    
-    issue_id=int(input("Enter book ID to issue: "))
 
-    found=False
+    issue_id = int(input("Enter Book ID to Issue: "))
 
-    for i in range(len(book_ids)):
-        if book_ids[i]==issue_id:
-            if book_status[i]=="Available":
-                book_status[i]="Issued"
-                print(f"\n Book with ID {issue_id} issued successfully.")
+    found = False
+
+    for book in books:
+
+        if book["book_id"] == issue_id:
+
+            found = True
+
+            if book["status"] == "Available":
+
+                book["status"] = "Issued"
+
+                print("\nBook issued successfully!")
+
             else:
-                print(f"\n Book with ID {issue_id} is already issued.")
-            found=True
+
+                print("\nBook is already issued.")
+
             break
 
-        if not found:
-            print(f"\n Book with ID {issue_id} not found.")
+    if not found:
+        print("\nBook ID not found.")
 
+
+# Return Book
 def return_book():
-    if len(book_ids)==0:
-        print("\n no book available in library")
-        return
-    
-    return_id=int(input("Enter Book id to return:"))
-    found=False
 
-    for i in range(len(book_ids)):
-        if book_ids[i]==return_id:
-            if book_status[i]=="Issued":
-                book_status[i]="Available"
-                print(f"\n Book with ID {return_id} returned successfully.")
+    if len(books) == 0:
+        print("\nNo books available in the library.")
+        return
+
+    return_id = int(input("Enter Book ID to Return: "))
+
+    found = False
+
+    for book in books:
+
+        if book["book_id"] == return_id:
+
+            found = True
+
+            if book["status"] == "Issued":
+
+                book["status"] = "Available"
+
+                print("\nBook returned successfully!")
+
             else:
-                print(f"\n Book with ID {return_id} was not issued.")
-            found=True
+
+                print("\nBook is already available.")
+
             break
 
-        if not found:
-            print(f"\n Book with ID {return_id} not found.")
-        
+    if not found:
+        print("\nBook ID not found.")
 
+
+# Main Menu
 while True:
-    print("\n Library Management System")
+
+    print("\n========== Library Management System ==========")
     print("1. Add Book")
     print("2. View Books")
     print("3. Search Book")
@@ -118,22 +171,33 @@ while True:
     print("6. Return Book")
     print("7. Exit")
 
-    choice=int(input("Enter your choice:"))
+    try:
+        choice = int(input("Enter your choice: "))
 
-    if choice==1:
-        addbook()
-    elif choice==2:
-        view_books()
-    elif choice==3:
-        search_books()
-    elif choice==4:
-        delete_books()
-    elif choice==5:
-        issue_book()
-    elif choice==6:
-        return_book()
-    elif choice==7:
-        print("\n Exiting the program.")
-        break
-    else:
-        print("\n Invalid choice. Please try again.")
+        if choice == 1:
+            add_book()
+
+        elif choice == 2:
+            view_books()
+
+        elif choice == 3:
+            search_book()
+
+        elif choice == 4:
+            delete_book()
+
+        elif choice == 5:
+            issue_book()
+
+        elif choice == 6:
+            return_book()
+
+        elif choice == 7:
+            print("\nThank you for using the Library Management System.")
+            break
+
+        else:
+            print("\nInvalid choice. Please enter a number between 1 and 7.")
+
+    except ValueError:
+        print("\nPlease enter numbers only.")
