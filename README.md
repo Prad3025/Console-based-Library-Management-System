@@ -1,14 +1,20 @@
 # 📚 Console-Based Library Management System
 
-A simple **Console-Based Library Management System** developed in Python as part of my learning journey. This project demonstrates the fundamentals of Python programming, including conditions, loops, lists, and menu-driven applications.
+A **Console-Based Library Management System** developed in Python as part of my learning journey. This project demonstrates Python fundamentals, including conditions, loops, functions, collections, and CRUD operations.
+
+---
 
 ## 🚀 Features
 
+- ➕ Add Book
 - 📖 View Books
-- ➕ Add New Book
-- 🔍 Search Book by Title
-- 🚪 Exit Application
-- 📋 Menu-driven console interface
+- 🔍 Search Book
+- 🗑️ Delete Book
+- 📕 Issue Book
+- 📗 Return Book
+- 📋 Menu-Driven Console Interface
+
+---
 
 ## 🛠️ Technologies Used
 
@@ -16,9 +22,11 @@ A simple **Console-Based Library Management System** developed in Python as part
 - Visual Studio Code
 - Git & GitHub
 
+---
+
 ## 📂 Project Structure
 
-```
+```text
 LibraryManagementSystem/
 │
 ├── app/
@@ -31,70 +39,131 @@ LibraryManagementSystem/
 └── .gitignore
 ```
 
+---
+
 ## ▶️ How to Run
 
-1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/Prad3025/Console-based-Library-Management-System.git
 ```
 
-2. Navigate to the project folder
+### 2. Navigate to the Project
 
 ```bash
 cd Console-based-Library-Management-System/app
 ```
 
-3. Run the application
+### 3. Run the Program
 
 ```bash
 python main.py
 ```
 
-## 📌 Sample Menu
+---
 
-```
+## 📋 Menu
+
+```text
 ========== Library Management System ==========
-1. View Books
-2. Add Book
+
+1. Add Book
+2. View Books
 3. Search Book
-4. Exit
+4. Delete Book
+5. Issue Book
+6. Return Book
+7. Exit
 ```
 
-## 📖 Concepts Covered
+---
 
-### Day 1
+## 📚 Concepts Covered
+
+### ✅ Day 1 – Python Basics
 - Variables
-- User Input
 - Data Types
-- Basic Console Output
+- User Input
+- Output Formatting
 
-### Day 2
-- Conditions (`if`, `elif`, `else`)
-- Loops (`while`, `for`)
-- Lists
+### ✅ Day 2 – Conditions & Loops
+- `if`, `elif`, `else`
+- `while`
+- `for`
 - Menu-Driven Programming
-- Searching Data
-- Basic CRUD (Create, Read, Search)
+
+### ✅ Day 3 – Functions
+- Function Definition
+- Function Calling
+- Code Reusability
+- CRUD Operations
+
+### ✅ Day 4 – Collections
+- Lists
+- Dictionaries
+- List of Dictionaries
+- Data Management using Collections
+
+---
+
+## 🧩 CRUD Operations
+
+| Operation | Description |
+|-----------|-------------|
+| Create | Add a new book |
+| Read | View all books |
+| Search | Search a book by title |
+| Delete | Remove a book |
+| Update | Issue and Return books by changing their status |
+
+---
+
+## 📖 Book Structure
+
+Each book is stored as a dictionary.
+
+```python
+{
+    "book_id": 101,
+    "title": "Python Programming",
+    "author": "John Smith",
+    "status": "Available"
+}
+```
+
+The application stores multiple books in a list.
+
+```python
+books = []
+```
+
+---
 
 ## 🎯 Learning Objectives
 
-This project was built to strengthen my understanding of:
+This project helped me understand:
 
 - Python Fundamentals
-- Control Flow
-- Lists and Data Storage
-- Console-Based Application Development
-- Git and GitHub Version Control
+- Functions
+- Collections (Lists & Dictionaries)
+- CRUD Operations
+- Menu-Driven Applications
+- Git & GitHub Workflow
+
+---
 
 ## 🔮 Future Enhancements
 
+- JSON File Handling (`books.json`, `members.json`)
+- Exception Handling
+- Custom Exceptions
 - Object-Oriented Programming (OOP)
 - Member Management
-- Book Issue & Return
-- File Handling for Data Persistence
-- Exception Handling
-- Database Integration (SQLite/MySQL)
+- Book Issue History
+- SQLite/MySQL Database Integration
+
+---
 
 ## 👨‍💻 Author
 
@@ -102,8 +171,14 @@ This project was built to strengthen my understanding of:
 
 B.Tech Computer Science Engineering (AI & ML)
 
-Passionate about Python, Artificial Intelligence, Machine Learning, and Software Development.
+Interested in:
+- Python Development
+- Artificial Intelligence
+- Machine Learning
+- Software Development
 
-## ⭐ Repository
+---
 
-If you found this project helpful, feel free to ⭐ star the repository.
+## ⭐ GitHub Repository
+
+If you found this project useful, feel free to ⭐ star the repository.
