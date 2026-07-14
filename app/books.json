@@ -4,5 +4,11 @@
         "title": "python",
         "author": "Guido",
         "status": "Available"
+    },
+    {
+        "book_id": 2,
+        "title": "physics",
+        "author": "albert",
+        "status": "Available"
     }
 ]
