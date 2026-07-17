@@ -66,7 +66,7 @@ def view_books():
 
     print("\n========== Book Details ==========")
 
-    for book in books:
+    for book in sorted(books,key=lambda x: x['title']):
         print(f"""
 Book ID : {book["book_id"]}
 Title   : {book["title"]}
@@ -82,21 +82,21 @@ def search_book():
         print("\nNo books available.")
         return
 
-    title = input("Enter Book Title: ")
+    search = input("Enter Book Title or Book ID: ")
 
     try:
         for book in books:
-            if book["title"].lower() == title.lower():
+                if (str(book["book_id"])==search or book["title"].lower()==search.lower()):
+                    print("\n Book found")
+                
 
-                print("\nBook Found")
-
-                print(f"""
+                    print(f"""
 Book ID : {book["book_id"]}
 Title   : {book["title"]}
 Author  : {book["author"]}
 Status  : {book["status"]}
 """)
-                return
+                    return
 
         raise BookNotFound("Book not found.")
 
@@ -237,4 +237,4 @@ while True:
             print("Invalid choice. Please enter a number between 1 and 7.")
 
     except ValueError:
-        print("Please enter numbers only.")
+        print("Please enter numbers only.") 
