@@ -1,69 +1,19 @@
-import json
+from books import (
+    add_book,
+    view_books,
+    search_book,
+    delete_book,
+    issue_book,
+    return_book
+)
 
-# Custom Exception
-class BookNotFound(Exception):
-    pass
+from members import (
+    add_member,
+    view_members,
+    search_member,
+    delete_member
+)
 
-
-# Load Books from JSON
-try:
-    with open("books.json", "r") as file:
-        books = json.load(file)
-except FileNotFoundError:
-    books = []
-
-# Load Members from JSON
-try:
-    with open("members.json", "r") as file:
-        members = json.load(file)
-except FileNotFoundError:
-    members = []
-
-
-# Save Books
-def save_books():
-    with open("books.json", "w") as file:
-        json.dump(books, file, indent=4)
-
-
-
-
-#members
-def save_members():
-    with open("members.json","w")as file:
-        json.dump(members,file,indent=4)
-
-# Add Member
-def add_member():
-    try:
-        member_id=int(input("Enter Member ID:"))
-    except ValueError:
-        print("Member ID must be integer")
-        return
-
-    for member in members:
-        if member['member_id']==member_id:
-            print("Member ID Already Exists")
-            return
-        
-    name=input("Enter Member Name:")
-
-    members.append({
-        'member_id':member_id,
-        'name':name
-    })
-
-    save_members()
-    print("Member added successfully")
-
-def view_members():
-    if not members:
-        print('No Member Found')
-        return
-    
-    for member in members:
-        print(f'{member["member_id"]} - {member["name"]}')
-# Main Menu
 while True:
 
     print("\n========== Library Management System ==========")
@@ -75,7 +25,9 @@ while True:
     print("6. Return Book")
     print("7. Add Member")
     print("8. View Members")
-    print("9. Exit")
+    print("9. Search Member")
+    print("10. Delete Member")
+    print("11. Exit")
 
     try:
         choice = int(input("Enter your choice: "))
@@ -105,11 +57,17 @@ while True:
             view_members()
 
         elif choice == 9:
+            search_member()
+
+        elif choice == 10:
+            delete_member()
+
+        elif choice == 11:
             print("\nThank you for using the Library Management System.")
             break
 
         else:
-            print("Invalid choice. Please enter a number between 1 and 7.")
+            print("Invalid choice. Please enter a number between 1 and 11.")
 
     except ValueError:
         print("Please enter numbers only.")
