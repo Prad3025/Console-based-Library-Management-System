@@ -10,5 +10,11 @@
         "title": "physics",
         "author": "albert",
         "status": "Available"
+    },
+    {
+        "book_id": 3,
+        "title": "Power",
+        "author": "sonal",
+        "status": "Available"
     }
 ]
