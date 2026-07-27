@@ -1,130 +1,166 @@
-# 📚 Console-Based Library Management System
+# Library Management System
 
-A simple **Console-Based Library Management System** developed in **Python**. This project allows users to manage library books through a menu-driven interface and stores data persistently using JSON files.
+## Overview
 
----
-
-## 🚀 Features
-
-* ➕ Add a new book
-* 📖 View all books
-* 🔍 Search a book by title
-* ❌ Delete a book
-* 📤 Issue a book
-* 📥 Return a book
-* 💾 Persistent storage using `books.json`
-* ⚠️ Custom exception handling (`BookNotFound`)
-* ✅ Input validation using `try`/`except`
+The Library Management System is a console-based application developed using **Python (Object-Oriented Programming)** with **JSON** for data storage. The project also includes a **MySQL database design** to demonstrate database concepts and SQL queries for library management.
 
 ---
 
-## 🛠️ Technologies Used
+## Features
+
+### Book Management
+
+* Add a new book
+* View all books
+* Search books by ID or title
+* Delete books
+* Issue books
+* Return books
+
+### Member Management
+
+* Add a new member
+* View all members
+* Search members
+* Delete members
+
+### Object-Oriented Programming Concepts
+
+* Classes and Objects
+* Inheritance
+* Encapsulation
+* Exception Handling
+* File Handling (JSON)
+
+---
+
+## Project Structure
+
+```text
+LibraryManagement/
+│
+├── app/
+│   ├── main.py
+│   ├── library.py
+│   ├── book.py
+│   ├── digital_book.py
+│   ├── reference_book.py
+│   ├── member.py
+│   ├── student.py
+│   ├── faculty.py
+│   ├── issue_transaction.py
+│   ├── storage.py
+│   ├── exceptions.py
+│   ├── books.json
+│   └── members.json
+│
+└── database/
+    └── library_management.sql
+```
+
+---
+
+## Technologies Used
 
 * Python 3
-* JSON (File Handling)
-* Exception Handling
+* Object-Oriented Programming (OOP)
+* JSON
+* MySQL
 * Git & GitHub
 
 ---
 
-## 📂 Project Structure
+## Database Tables
 
-```text
-LibraryManagementSystem/
-│
-├── app/
-│   ├── main.py
-│   ├── books.json
-│   └── members.json
-│
-├── README.md
-└── venv/
-```
+### Users
+
+* user_id
+* username
+* password
+* role
+
+### Books
+
+* book_id
+* isbn
+* title
+* author
+* category
+* copies_available
+* created_date
+
+### Members
+
+* member_id
+* name
+* email
+* member_type
+* status
+
+### Issue Transactions
+
+* transaction_id
+* book_id
+* member_id
+* issue_date
+* return_date
 
 ---
 
-## ▶️ How to Run
+## SQL Operations
 
-1. Clone the repository:
+The SQL module includes the following operations:
+
+* Add Book
+* Update Book Stock
+* Search Books
+* List Available Books
+* Borrow History
+* Top Borrowed Books
+
+---
+
+## How to Run
+
+1. Clone the repository.
 
 ```bash
-git clone https://github.com/Prad3025/Console-based-Library-Management-System.git
+git clone <repository-url>
 ```
 
-2. Navigate to the project folder:
+2. Navigate to the project directory.
 
 ```bash
-cd Console-based-Library-Management-System
+cd LibraryManagement
 ```
 
-3. (Optional) Create and activate a virtual environment.
-
-Windows:
+3. Run the application.
 
 ```bash
-python -m venv venv
-venv\Scripts\activate
+python main.py
 ```
 
-4. Run the application:
+4. For the SQL module:
 
-```bash
-python app/main.py
-```
-
----
-
-## 📋 Menu
-
-```text
-========== Library Management System ==========
-1. Add Book
-2. View Books
-3. Search Book
-4. Delete Book
-5. Issue Book
-6. Return Book
-7. Exit
-```
+   * Open `database/library_management.sql`
+   * Execute the script in MySQL Workbench or another MySQL client.
 
 ---
 
-## 📁 Data Storage
+## Future Enhancements
 
-The application stores data in JSON files:
-
-* `books.json` – Stores book details
-* `members.json` – Reserved for member information
-
-All book changes are automatically saved, so data remains available even after closing the application.
-
----
-
-## ⚠️ Exception Handling
-
-The project includes:
-
-* Custom `BookNotFound` exception
-* `FileNotFoundError` handling for JSON files
-* `ValueError` handling for invalid numeric input
+* MySQL integration with Python
+* Login and authentication
+* Fine calculation for overdue books
+* Book reservation system
+* GUI using Tkinter or a web interface using Flask/FastAPI
 
 ---
 
-## 🎯 Learning Outcomes
-
-This project demonstrates:
-
-* Python functions
-* Lists and dictionaries
-* JSON file handling
-* Exception handling
-* Menu-driven programming
-* Git and GitHub version control
-
----
-
-## 👨‍💻 Author
+## Author
 
 **Pradeep Kumar**
 
-GitHub: https://github.com/Prad3025
+B.Tech Computer Science Engineering (AI & ML)
+
+Christ (Deemed to be University)
