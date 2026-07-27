@@ -1,18 +1,6 @@
-from books import (
-    add_book,
-    view_books,
-    search_book,
-    delete_book,
-    issue_book,
-    return_book
-)
+from library import Library
 
-from members import (
-    add_member,
-    view_members,
-    search_member,
-    delete_member
-)
+library = Library()
 
 while True:
 
@@ -30,44 +18,44 @@ while True:
     print("11. Exit")
 
     try:
-        choice = int(input("Enter your choice: "))
+        choice = int(input("\nEnter your choice: "))
 
         if choice == 1:
-            add_book()
+            library.add_book()
 
         elif choice == 2:
-            view_books()
+            library.view_books()
 
         elif choice == 3:
-            search_book()
+            library.search_book()
 
         elif choice == 4:
-            delete_book()
+            library.delete_book()
 
         elif choice == 5:
-            issue_book()
+            library.issue_book()
 
         elif choice == 6:
-            return_book()
+            library.return_book()
 
         elif choice == 7:
-            add_member()
+            library.add_member()
 
         elif choice == 8:
-            view_members()
+            library.view_members()
 
         elif choice == 9:
-            search_member()
+            library.search_member()
 
         elif choice == 10:
-            delete_member()
+            library.delete_member()
 
         elif choice == 11:
             print("\nThank you for using the Library Management System.")
             break
 
         else:
-            print("Invalid choice. Please enter a number between 1 and 11.")
+            print("\nInvalid choice! Please enter a number between 1 and 11.")
 
     except ValueError:
-        print("Please enter numbers only.")
+        print("\nPlease enter numbers only.")
