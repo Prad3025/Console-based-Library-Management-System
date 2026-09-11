@@ -187,7 +187,7 @@ This project was built to practice and demonstrate:
 ## 👨‍💻 Author
 
 **Pradeep Kumar**  
-Inten at Hexaware
+Inten at Hexaware , 
 B.Tech Computer Science Engineering (AI & ML)  
 Christ (Deemed to be University)
 
