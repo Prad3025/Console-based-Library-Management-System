@@ -1,4 +1,4 @@
-from connection import get_connection
+from database.connection import get_connection
 from datetime import date
 
 
